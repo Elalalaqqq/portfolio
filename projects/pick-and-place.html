@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Elaina Qiu’s portfolio of interactive systems and physical prototypes.">
+<title>Pick-and-Place Robot — Elaina Qiu</title>
+<link rel="stylesheet" href="../style.css?v=33">
+<script src="../site.js?v=33" defer></script>
+</head>
+<body>
+<header><div class="shell bar">
+<a class="brand" href="../index.html#profile">Elaina Qiu</a>
+<a class="header-email" href="mailto:elaqiu04@gmail.com">elaqiu04@gmail.com</a>
+<nav aria-label="Main navigation">
+<a href="../index.html#profile">Profile</a>
+<a href="../index.html#library">Library</a>
+
+</nav>
+</div></header>
+<main class="shell project project-arm">
+<a class="back mono blue" href="../index.html#pick-and-place">← Back to library</a>
+<div class="project-head" data-reveal><p class="mono">January 2026</p><h1>Pick-and-Place Robot</h1><p class="subtitle">Magnetic End-Effector Arm</p></div>
+
+
+<div class="case-study"><div class="case-row image-right" data-reveal><div class="case-text"><section><h2>Overview</h2><p class=lead>A looks-like / works-like prototype of a pick-and-place robot that picks up a small object at one end of a table and places it at the other. The design is mechanically plausible and includes a degrees-of-freedom analysis and a distance-sensing (encoder) prototype.</p></section></div><div class="case-image"><div class="case-gallery"><figure><a href="../media/projects/photo-6766.jpg" target="_blank" rel="noopener noreferrer"><img src="../media/projects/photo-6766.jpg" alt="Wooden robotic arm on a cardboard rotating base" loading="lazy"></a><figcaption>The physical pick-and-place prototype</figcaption></figure></div></div></div><div class="case-row image-left" data-reveal><div class="case-text"><section><h2>Parts list</h2><dl class="parts"><div><dt>Servo motor</dt><dd>Rotates the base (DOF 1) and lifts the arm at the joints (DOF 2 and 3).</dd></div><div><dt>Magnet</dt><dd>Passive end-effector that picks up the paper clip.</dd></div><div><dt>Potentiometer</dt><dd>Provides the manual input used to control the base servo angle.</dd></div><div><dt>Popsicle sticks</dt><dd>Main body of the robotic arm.</dd></div></dl></section><section><h2>Modeling</h2><p>Robotic arm: popsicle sticks joined with screws and nuts.</p><p>Base servo: attached to the cardboard platform with hot glue. The platform is mounted on the servo, and a potentiometer provides the manual control input for its rotation.</p></section></div><div class="case-image"><div class="case-gallery"><figure><a href="../media/projects/photo-6809.jpg" target="_blank" rel="noopener noreferrer"><img src="../media/projects/photo-6809.jpg" alt="Front and side arm sketches showing the three degrees of freedom and measured radius" loading="lazy"></a><figcaption>Front and side sketches, degrees of freedom and the 11 cm radius</figcaption></figure></div></div></div><div class="case-row image-right" data-reveal><div class="case-text"><section><h2>Mechanical design (Looks-like prototype)</h2><p>DOF 1, Base rotation: the rotating platform is mechanically connected to the base servo. Turning the potentiometer controls the servo angle, rotating the platform and the arm together. Base rotation is also the DOF analyzed in the distance-sensing prototype.</p><p>DOF 2 &amp; 3, Arm lift: servos at the joints control the vertical position of the arm.</p><p>End-effector, magnetic pickup: it picks the object up passively, so it needs no extra DOF. A paper clip is placed by threading it through a wooden stick to complete the placement.</p><p>Built with craft materials, with front and side annotated sketches.</p></section></div><div class="case-image"><div class="case-gallery"><figure><video controls playsinline preload="metadata" src="../media/projects/arm-servo-control.mp4"></video><figcaption>Turning the potentiometer to control the servo</figcaption></figure></div></div></div><div class="case-note" data-reveal><section><h2>Distance Sensing (Works-like prototype)</h2><p>For the distance-sensing prototype, the base joint is encoded with a potentiometer, which converts rotational position into voltage.</p><p>The end-effector moves along a circular path. Measured radius from base axis to end-effector: r = 11 cm.</p><p>When the base rotates θ degrees, the arc-length distance travelled is s = rθ = 11 · θ · π/180.</p><p>Circuit: potentiometer signal → analog input A0, plus 5V and GND.</p></section></div><div class="project-ending-video"><figure><video controls playsinline preload="metadata" src="../media/projects/arm-pick-place.mp4" poster="../media/projects/arm-poster.jpg"></video><figcaption>Pick-and-place prototype demonstration</figcaption></figure></div></div>
+<div class="pager"><a class="mono blue" href="../index.html#library">← Library</a>
+<a href="arc-link.html"><span class="mono blue">Next project ↗</span><br>Arc’Link</a></div>
+</main>
+<footer><div class="shell mono"><span>Elaina Qiu</span><span>Portfolio · 2026</span></div></footer>
+</body></html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Elaina Qiu’s portfolio of interactive systems and physical prototypes.">
+<title>Ultrasonic Sonar Tower — Elaina Qiu</title>
+<link rel="stylesheet" href="../style.css?v=33">
+<script src="../site.js?v=33" defer></script>
+</head>
+<body>
+<header><div class="shell bar">
+<a class="brand" href="../index.html#profile">Elaina Qiu</a>
+<a class="header-email" href="mailto:elaqiu04@gmail.com">elaqiu04@gmail.com</a>
+<nav aria-label="Main navigation">
+<a href="../index.html#profile">Profile</a>
+<a href="../index.html#library">Library</a>
+
+</nav>
+</div></header>
+<main class="shell project project-sonar">
+<a class="back mono blue" href="../index.html#sonar-tower">← Back to library</a>
+<div class="project-head" data-reveal><p class="mono">February 2026</p><h1>Ultrasonic Sonar Tower</h1><p class="subtitle">A Hand-Scanned Polar Distance Mapper</p></div>
+
+
+<div class="case-study"><div class="case-row image-right" data-reveal><div class="case-text"><section><h2>Overview</h2><p class=lead>A sonar tower that maps distances across a 0–180° field of view. An ultrasonic sensor sits on a rotating axis, and a potentiometer coupled to that axis works as an angle encoder. Each angle is paired with a distance measurement and drawn as a polar radar display.</p><p>With no servo motor available, I chose a hand-turned design, so the potentiometer serves as the angle encoder</p></section></div><div class="case-image"><div class="case-gallery"><figure><a href="../media/projects/photo-1237.jpg" target="_blank" rel="noopener noreferrer"><img src="../media/projects/sonar-setup.jpg" alt="Ultrasonic tower and Arduino connected to a laptop showing a polar radar display" loading="lazy"></a><figcaption>The tower, Arduino wiring and Processing display in the working setup</figcaption></figure></div></div></div><div class="case-row image-left" data-reveal><div class="case-text"><section><h2>Parts list</h2><dl class="parts"><div><dt>Arduino Uno</dt><dd>Reads the sensors and sends angle and distance data to Processing.</dd></div><div><dt>HC-SR04 ultrasonic sensor</dt><dd>Measures the distance to objects.</dd></div><div><dt>Potentiometer</dt><dd>Angle encoder: its voltage tells the pointing direction of the tower.</dd></div><div><dt>Plastic Straw</dt><dd>Main body of the tower’s rotating axis</dd></div></dl></section><section><h2>Modeling</h2><p>The tower is built from a plastic straw. The potentiometer and sensor are fixed to the axis with tape and glue.</p></section></div><div class="case-image"><div class="case-gallery"><figure><a href="../media/projects/photo-7264.jpg" target="_blank" rel="noopener noreferrer"><img src="../media/projects/photo-7264.jpg" alt="Hand-drawn sonar tower with manual rotation axis and polar display" loading="lazy"></a><figcaption>Physical layout and polar mapping sketch</figcaption></figure></div></div></div><div class="case-row image-right" data-reveal><div class="case-text"><section><h2>Physical design (Looks-like prototype)</h2><p>HC-SR04 ultrasonic sensor mounted on a vertical axis. Its pointing direction changes as the base rotates.</p><p>Manual scan interaction: the user turns the base by hand, one step at a time.</p><p>Potentiometer as angle encoder: it is mechanically coupled to the rotation axis, so its voltage represents the current pointing direction.</p><p>Field of view: the potentiometer has a 270° mechanical range, but the system defines the usable range as 0–180° to match a realistic sonar sweep.</p></section></div><div class="case-image"><div class="case-gallery"><figure><video controls playsinline preload="metadata" src="../media/projects/sonar-scan.mp4" poster="../media/projects/sonar-scan-poster.jpg"></video><figcaption>Manual scan and the live Processing radar display</figcaption></figure></div></div></div><div class="case-note" data-reveal><section><h2>Electronics (Works-like prototype)</h2><p>Arduino Uno. HC-SR04: VCC and GND, TRIG to D7, ECHO to D8. 10 kΩ potentiometer: outer pins to 5V and GND, wiper to A0.</p></section></div><div class="case-row image-left" data-reveal><div class="case-text"><section><h2>Algorithm</h2><p>Calibration: rotate to the left limit and store potMin, then to the right limit and store potMax. This maps the physical endpoints to a numeric range (0–1023).</p><p>Angle mapping: read analogRead(A0) and map it to 0–180°.</p><p>Sampling control: in Processing, pressing SPACE saves one (angle, distance) sample, which matches the idea of scanning step by step. Pressing C clears all samples.</p><p>Polar visualization: Processing converts polar data to screen coordinates. Angle sets direction and distance sets radius. Points are drawn on a semicircle radar with range rings at 25, 50, 75 and 100 cm, and a heads-up display shows the latest angle and distance.</p></section></div><div class="case-image"><div class="case-gallery"><figure><a href="../media/projects/sonar-algorithm-7265.jpg" target="_blank" rel="noopener noreferrer"><img src="../media/projects/sonar-algorithm-7265.jpg" alt="Sonar project algorithm notes" loading="lazy"></a><figcaption>Algorithm and mapping notes</figcaption></figure></div></div></div><div class="case-note" data-reveal><section><h2>Reflection</h2><p>The key constraint was the lack of a servo motor. Using a potentiometer to measure angular position by hand still gave a functional polar scan.</p><p>The project connects to embodied cognition and perception: the potentiometer does not “know” the angle by itself. The angle emerges through mapping and calibration.</p></section></div></div>
+<div class="pager"><a class="mono blue" href="../index.html#library">← Library</a>
+<a href="pick-and-place.html"><span class="mono blue">Next project ↗</span><br>Pick-and-Place Robot</a></div>
+</main>
+<footer><div class="shell mono"><span>Elaina Qiu</span><span>Portfolio · 2026</span></div></footer>
+</body></html>

@@ -185,9 +185,15 @@ for (const link of document.querySelectorAll('a[href$="#profile"]')) {
   });
 }
 
-if (location.hash === '#profile') {
-  requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'auto' }));
+// A fresh homepage visit starts at Profile instead of restoring an old project position.
+if (profile && (!location.hash || location.hash === '#profile')) {
+  history.scrollRestoration = 'manual';
+  const startAtProfile = () => window.scrollTo({top: 0, behavior: 'instant'});
+  startAtProfile();
+  requestAnimationFrame(startAtProfile);
+  window.addEventListener('pageshow', startAtProfile);
 }
+
 
 
 
